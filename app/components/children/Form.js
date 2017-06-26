@@ -9,11 +9,9 @@ var Form = React.createClass({
     return { term: "" };
   },
 
-  // This function will respond to the user input
-  handleChange: function(event) {
-
+  // This function will respond to the user input [WHERE DOES TARGET.VAL COME FROM?!]
+  handleChange: function(event) {  
     this.setState({ term: event.target.value });
-
   },
 
   // When a user submits...
@@ -26,12 +24,13 @@ var Form = React.createClass({
     this.props.setTerm(this.state.term);
     this.setState({ term: "" });
   },
+  
   // Here we describe this component's render method
   render: function() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h3 className="panel-title text-center">Search</h3>
+          <h3 className="panel-title text-center">Query</h3>
         </div>
         <div className="panel-body text-center">
           <form onSubmit={this.handleSubmit}>
@@ -58,7 +57,7 @@ var Form = React.createClass({
                 className="btn btn-primary"
                 type="submit"
               >
-                Search
+                Submit
               </button>
             </div>
           </form>
